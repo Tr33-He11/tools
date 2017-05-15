@@ -2,28 +2,8 @@
 #!/usr/bin/env python
 
 '''
-  ___  ________   ________  ___  ________  ___  ___  _________   
-|\  \|\   ___  \|\   ____\|\  \|\   ____\|\  \|\  \|\___   ___\ 
-\ \  \ \  \\ \  \ \  \___|\ \  \ \  \___|\ \  \\\  \|___ \  \_| 
- \ \  \ \  \\ \  \ \_____  \ \  \ \  \  __\ \   __  \   \ \  \  
-  \ \  \ \  \\ \  \|____|\  \ \  \ \  \|\  \ \  \ \  \   \ \  \ 
-   \ \__\ \__\\ \__\____\_\  \ \__\ \_______\ \__\ \__\   \ \__\
-    \|__|\|__| \|__|\_________\|__|\|_______|\|__|\|__|    \|__|
-                   \|_________|                                 
-                                                                
-                                                                
-
- ___       ________  ________  ________      
-|\  \     |\   __  \|\   __  \|\   ____\     
-\ \  \    \ \  \|\  \ \  \|\ /\ \  \___|_    
- \ \  \    \ \   __  \ \   __  \ \_____  \   
-  \ \  \____\ \  \ \  \ \  \|\  \|____|\  \  
-   \ \_______\ \__\ \__\ \_______\____\_\  \ 
-    \|_______|\|__|\|__|\|_______|\_________\
-                                 \|_________|
-                                             
-By Anthr@X
-									 
+Example: portscan.py 192.168.0.0/24 1 1024 -t 20
+		 portscan.py  -f ip.txt 80 -S -N -t 20						 
 '''
 #V1.01
 
@@ -655,7 +635,7 @@ def findhost(ip,port,hostname,ssl=False):
 	c.close()	
 	
 if __name__ == "__main__":
-	usage="usage: insightscan.py <hosts[/24|/CIDR]> [start port] [end port] -t threads\n\nExample: insightscan.py 192.168.0.0/24 1 1024 -t 20\n	 insightscan.py -f host.txt 1 1024 -t 20"
+	usage="usage: insightscan.py <hosts[/24|/CIDR]> [start port] [end port] -t threads\n\nExample: portscan.py 192.168.0.0/24 1 1024 -t 20\n	 portscan.py  -f host.txt 1 1024 -t 20"
 	parser = OptionParser(usage=usage)
 	parser.add_option("-t", "--threads", dest="NUM",help="Maximum threads, default 50")
 	parser.add_option("-T", "--timeout", dest="TIMEOUT",help="Scan timeout, per thread")
