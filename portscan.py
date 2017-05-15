@@ -3,7 +3,7 @@
 
 '''
 Example: portscan.py 192.168.0.0/24 1 1024 -t 20
-		 portscan.py  -f ip.txt 80 -S -N -t 20						 
+         portscan.py  -f ip.txt 80 -S -N -t 20						 
 '''
 #V1.01
 
